@@ -2,55 +2,41 @@
     - aplicações comuns com responsabilidades definidas
     - disponibiliza informação
     - realiza transações
-    - feita para resolver problemas de négocios 
+    - feita para resolver problemas de negócios
     - Independente de código, linguagem de programação e protocolos
     - Estabelece comunicação com um ou vários clientes (usuário final, outros serviços, etc)
     - Aplicações comuns com escopo bem delimitado.
-    
-- Microserviços 
+
+- microsserviços
     - São pequenos e tem poucas responsabilidades
-    - Maior tolerância a falhas (se bem feito), a monolitica se uma parte cai, cai o sistema todo
-    - Devem ser independentes, um microserviço deve funcionar mesmo que outro caia. (db próprio e tals)
-    - Comunicação é feita de forma síncrona e assíncrona (assincrona geralmente é feita com messageria)
-    
+    - Maior tolerância a falhas (se bem feito), a monolítica se uma parte cai, cai o sistema todo
+    - Devem ser independentes, um microsserviços deve funcionar mesmo que outro caia. (db próprio e tals)
+    - Comunicação é feita de forma síncrona e assíncrona (assíncrona geralmente é feita com messageria)
 
+- Características importantes quando trabalhamos com microsserviços
+    - Componentização via serviços (dividir monólito em componentes, cada um desse vira um microsserviços)
+    - Organizado em torno do negócio (resolver problemas de negocio e não problemas técnico)
+    - Estrutura baseada em Produtos, não em projetos (pequenos produtos focados em negócios)
+    - Smart endpoint & Dumb pipes (os microsserviços devem ter formas de comunicação inteligentes porém utilizar sistemas de mensagens que possa mandar e receber mensagens de forma simples)
+    - Governança descentralizada (Cada microsserviços pode ser gerenciado de forma diferente)
+    - Descentralização dos dados ( cada microsserviços tem sua própria fonte de dados)
+    - Automação da infra (Não dá pra gerenciar 500 microsserviços gerenciando maquina, fazendo deploy, rodando testes na mão, tudo tem que tá automatizado)
+    - Desenhado para falhar ( Muitas vezes um microsserviços vai fazer algo que dá errado, por isso temos que ter um fallback)
+    - Design Evolutivo ( microsserviços podem evoluir, e virar vários microsserviços, e o software tem que estar preparado pra isso )
 
-- Caracteristicas importantes quando trabalhamos com microserviços
-
-    - Componentização via serviços (dividir monolito em componentes, cada um desse vira um microserviço)
-
-    - Organizado em torno do negócio (resolver problemas de negocio e não problemas tecnico)
-
-    - Estrutura baseada em Produtos, não em projetos (pequenos produtos focados em negocios)
-
-    - Smart endpoint & Dumb pipes (os microserviços devem ter formas de comunicação inteligentes porém utilizar sistemas de mensagens que possa mandar e receber mensagens de forma simples)
-
-    - Governança descentralizada (Cada microserviço pode ser gerenciado de forma diferente)
-    
-    - Descentralização dos dados ( cada microserviço tem sua própria fonte de dados)
-
-    - Automação da infra (Não dá pra gerenciar 500 microserviços gerenciando maquina, fazendo deploy, rodando testes na mão, tudo tem que tá automatizado)
-
-    - Desenhado para falhar ( Muitas vezes um microserviço vai fazer algo que dá errado, por isso temos que ter um fallback)
-
-    - Design Evolutivo ( Microserviços podem evoluir, e virar vários microserviços, e o software tem que estar preparado pra isso )
-
-
-- CUIDADO!! Microserviços não são bala de prata.
+- CUIDADO!! microsserviços não são bala de prata.
     - Arquitetura é mais complexa
     - Pode representar alto custo, pois a infra vai ser maior e mais complexa
-    - Necessidade de várias equipes para manter (não dá pra uma equipe de 8 pessoas gerencias 100 microserviços)
-    - Sistema precisa ser grande o suficiente para justificar microserviços (MONOLITICOS NÃO SÃO RUINS)
-    - Gera problemas que não tinham antes com Monolitos
-    - Monitoramente (microserviços se comunicam a todo momento, e precisamos verificar tempo de resposta, erros, etc.)
+    - Necessidade de várias equipes para manter (não dá pra uma equipe de 8 pessoas gerencias 100 microsserviços)
+    - Sistema precisa ser grande o suficiente para justificar microsserviços (MONOLÍTICOS NÃO SÃO RUINS)
+    - Gera problemas que não tinham antes com Monólitos
+    - Monitoramento (microsserviços se comunicam a todo momento, e precisamos verificar tempo de resposta, erros, etc.)
 
-
-- CONTEXTO BASEADO EM DDD
-    - contexto -> pontos que fazem diferença em estar isolado
-    - Esses contextos que podem ser delimitados, são chamados no DDD de bounded contexts. 
+- Contexto em DDD
+    - Contexto -> pontos que fazem diferença em estar isolado
+    - Esses contextos que podem ser delimitados, são chamados no DDD de bounded contexts.
     - Esses contextos devem ser protegidos para que nada entre e interfira seu processo interno
-    - Cada contexto pode ter sua mesma linguagem ubiqua (forma de se falar no dia a dia)
-        ex: o Cliente de marketing pode ser diferente do Cliente do financeiro
-    - Utiliza-se historia e levantamento do escopo do projeto com o Domain Expert no processo de delimitação do escopo. 
+    - Cada contexto pode ter sua mesma linguagem ubíqua (forma de se falar no dia a dia). ex: o Cliente de marketing pode ser diferente do Cliente do financeiro
+    - Utiliza-se historia e levantamento do escopo do projeto com o Domain Expert no processo de delimitação do escopo.
 
 
