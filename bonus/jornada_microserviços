@@ -7,7 +7,7 @@
     - Estabelece comunicação com um ou vários clientes (usuário final, outros serviços, etc)
     - Aplicações comuns com escopo bem delimitado.
 
-- microsserviços
+- Microsserviços
     - São pequenos e tem poucas responsabilidades
     - Maior tolerância a falhas (se bem feito), a monolítica se uma parte cai, cai o sistema todo
     - Devem ser independentes, um microsserviços deve funcionar mesmo que outro caia. (db próprio e tals)
@@ -30,7 +30,7 @@
     - Necessidade de várias equipes para manter (não dá pra uma equipe de 8 pessoas gerencias 100 microsserviços)
     - Sistema precisa ser grande o suficiente para justificar microsserviços (MONOLÍTICOS NÃO SÃO RUINS)
     - Gera problemas que não tinham antes com Monólitos
-    - Monitoramento (microsserviços se comunicam a todo momento, e precisamos verificar tempo de resposta, erros, etc.)
+    - Monitoramento (microsserviços se comunicam a todo momento, e precisamos verificar tempo de resposta, erros, etc.).
 
 - Contexto em DDD
     - Contexto -> pontos que fazem diferença em estar isolado
