@@ -33,3 +33,5 @@ Avaliação de possíveis novas tecnologias.
 Padronização de tecnologias.
 
 Planejamento de GRANDES implantações.
+
+Também são responsáveis pelo sistema core da empresa (sistemas que mexem com o dia a dia), não tão tecnicamente, mas sim realizar as decisões.
