@@ -6,10 +6,14 @@ services:
       context: ./node
     networks:
       - dbnet
+    entrypoint: dockerize --wait tcp://db:3306 -timeout 50s docker-entrypoint.sh
     volumes:
       - ./node:/usr/src/app
     tty: true
     container_name: app
+    depends_on:
+      - db
+    restart: always
     ports:
       - "3000:3000"
 
