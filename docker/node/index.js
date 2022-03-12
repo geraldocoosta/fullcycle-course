@@ -1,10 +1,24 @@
-const express = require('express')
-const app = express()
+const express = require("express");
+const app = express();
 
-const port = 3000
+const port = 3000;
 
-app.get('/', (req, res) => {
-    res.send('<h1>OI</h1>')
-})
+const config = {
+  host: "db",
+  user: "root",
+  password: "root",
+  database: "nodedb",
+};
 
-app.listen(port, () => console.log(`Rodando na porta ${port}`))
+const mysql = require("mysql");
+const connection = mysql.createConnection(config);
+
+const sql = `INSERT INTO people (name) values ('Geraldo')`;
+connection.query(sql);
+connection.end();
+
+app.get("/", (req, res) => {
+  res.send("<h1>OI</h1>");
+});
+
+app.listen(port, () => console.log(`Rodando na porta ${port}`));
