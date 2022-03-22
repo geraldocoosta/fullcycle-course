@@ -49,8 +49,37 @@ Um dos papeis principais de um arquiteto de solução é fazer desenhos arquitet
   - UML
   - BPMN
 
-Analisa os impactos comerciais em relação a uma escolha tecnológica
+Analisa os impactos comerciais em relação a uma escolha tecnológica.
 
-Pode participar do processo comercial de pré-venda e venda
+Pode participar do processo comercial de pré-venda e venda.
 
-Analisa os impactos dos custos para o negócio
+Analisa os impactos dos custos para o negócio.
+
+### Arquitetura Software
+
+É uma disciplina da engenharia de software.
+
+Diretamente ligada ao processo de desenvolvimento de software (Não é arquitetura de solução).
+
+- Afeta diretamente na estrutura organizacional da empresa
+  - Formação de times
+  - Estrutura dos componentes de software
+  - "Organizações que desenvolvem sistemas de software tendem a produzir sistemas que são cópias das estruturas de comunicação dessas empresas. (Melvin Conway)"
+
+É a relação entre o objetivos de negócio e suas restrições com os componentes a serem criados e suas responsabilidades visando sua evolução do software.
+
+É a organização fundamental de um sistema e seus componentes, suas relações, seu ambiente, bem como os princípios que guiam seu design e evolução. (IEEE)
+
+O processo de arquitetar um software estabelece que o que está sendo desenvolvido faça parte de um conjunto maior atendendo a necessidade do negocio a curto, médio, longo prazo.
+
+- Papel do arquiteto de software
+  - Transformar requisitos de negócio em padrões arquiteturais
+  - Orquestrar pessoas desenvolvedoras e experts de domínio
+  - Entender de forma profunda conceitos e modelos arquiteturais
+  - Auxilia na tomada de decisão nos momentos de crise
+  - Reforça boas práticas de desenvolvimento
+  - Code reviews
+
+Apesar de nem todas organizações possuírem um cargo de arquiteto de software, normalmente profissionais mais experientes como desenvolvedores seniors e tech leads acabam realizando esse papel baseado em suas experiencias.
+
+Há empresas que apesar de não possuírem o cargo de arquiteto de software, possuem um departamento de arquitetura que auxilia os diversos times da organização com questões arquiteturais.
