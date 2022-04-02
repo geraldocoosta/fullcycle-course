@@ -73,7 +73,7 @@ Também vai ter routing key, mas essas routing keys contem regras que parecem co
 
 Routing key vai usar uma formato com * ou #.
 
-Exemplo, se tenho uma routing key `x.*`, toda mensagem que eu enviar que tiver a routing key começando em x.{qualquercoisa} vai ser enviada para a fila relacionada ao routing key `x.*`.
+Exemplo, se tenho uma routing key `x.*`, toda mensagem que eu enviar que tiver a routing key começando em x.{qualquerCoisa} vai ser enviada para a fila relacionada ao routing key `x.*`.
 
 A expressão # indica uma correspondência de zero ou mais palavras.
 
@@ -94,7 +94,7 @@ Existe um esquema de prioridade, mas tem que saber muito pra justificar e essa p
     - Drop Head (remove a última mensagem)
     - Reject Publish (rejeita a mensagem, publisher recebe um erro)
   - Exclusive: Somente channel que criou pode acessar
-  - Max length ou bytes: Quantidade máxima de mensagens ou tamanho das mensagens em bytes permitidas. Caso aconteça, termos um overflow e podemos excolher em remover as mensagens mais antigas ou rejeitar as mensagens novas.
+  - Max length ou bytes: Quantidade máxima de mensagens ou tamanho das mensagens em bytes permitidas. Caso aconteça, termos um overflow e podemos escolher em remover as mensagens mais antigas ou rejeitar as mensagens novas.
 
 Filas são declaradas.
 
@@ -117,3 +117,37 @@ Exige alto I/O
 Tem que ter caso especifico pra justificar o uso, pois é mais lento
 
 Quando há milhões de mensagens em uma fila, por qualquer motivo, há possibilidade de liberar a memória. jogando especificamente as mensagens da fila no disco
+
+## Simulando o comportamento de filas e exchanges com Site
+
+Acessando esse [site](http://tryrabbitmq.com/), podemos simular o comportamento do tipo de exchanges que o Rabbit tem.
+
+## Confiabilidade
+
+Como garantir que as mensagens nao serão perdidas no meio do caminho?
+
+Como garantir que as mensagens puderam ser processadas corretamente pelos consumidores?
+
+O Rabbit tem alguns recursos para resolver essas situações.
+
+- Consumer acknowledgement
+- Publisher confirm
+- Filas e mensagens duráveis / persistidas
+
+## Consumer acknowledgement
+
+Temos 3 tipos de acknowledgement
+
+Basic.Ack -> Consumidor envia uma resposta de sucesso ao Rabbit, que conseguiu processar a mensagem
+Basic.Reject -> Consumer recebeu a mensagem e não conseguiu processá-la, a mensagem volta e fica na fila
+Basic.Nack -> Consumer é como o reject, mas ele rejeita mais de uma mensagem ao mesmo tempo
+
+## Publisher confirm
+
+Imagina que vamos enviar a mensagem pro rabbit e queremos ter certeza que o rabbit recebeu a mensagem.
+
+O publisher envia uma mensagem, e essa mensagem vai ter um id, através desse id podemos nos organizar para receber a confirmação. (O publisher tem que dar o id para uma mensagem, e esse id é um numero inteiro)
+
+Quando o exchange recebe essa mensagem, ele retorna uma resposta, falando que tá dando um Ack: ID = idDaMensagem
+
+Quando a exchange tem um problema, ele retorna uma resposta falando que não conseguiu processar: Nack: ID = idDaMensagem
