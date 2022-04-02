@@ -151,3 +151,12 @@ O publisher envia uma mensagem, e essa mensagem vai ter um id, através desse id
 Quando o exchange recebe essa mensagem, ele retorna uma resposta, falando que tá dando um Ack: ID = idDaMensagem
 
 Quando a exchange tem um problema, ele retorna uma resposta falando que não conseguiu processar: Nack: ID = idDaMensagem
+
+## Virtual Host
+
+É uma forma de conseguir separar contextos.
+
+Dentro de cada vhost posso ter filas, e os vhost não se conversam, ex: no virtual host / eu tenho uma fila chamada x, no virtual host /y eu tenho uma fila chamada x.
+
+Quando a gente se conecta no rabbit, eu tenho que declarar qual o vhost que vou me comunicar.
+
