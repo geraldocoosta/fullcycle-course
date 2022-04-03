@@ -51,6 +51,4 @@ Se o limite de cpu e memoria do cluster for atingido, o kubernetes **não** cria
 
 Se um nó cair, os pods que pertenciam a esse nó vão ser redistribuídos para outros.
 
-O k8s ira verificar a saude dos pods pra se der ruim, subir outro saudavel e matar o que não está saudavel.
-
-## Services
+O k8s ira verificar a saúde dos pods pra se der ruim, subir outro saudável e matar o que não está saudável.
