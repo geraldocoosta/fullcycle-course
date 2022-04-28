@@ -55,8 +55,13 @@ O k8s ira verificar a saúde dos pods pra se der ruim, subir outro saudável e m
 
 ## Comandos importantes
 
-Mapeando para, quando eu acessar o localhost 8080 da minha máquina, ir para a porta 8080 de um pod
-
 ```bash
+# Mapeando para, quando eu acessar o localhost 8080 da minha máquina, ir para a porta 8080 de um pod
 kubectl port-forward pod/goserver 8080:8080
+
+#Deletando po no namespace default
+kubectl delete pod goserver
+
+# Buscando pods no namespace default
+kubectl get pod
 ```
