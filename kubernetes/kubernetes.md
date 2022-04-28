@@ -52,3 +52,11 @@ Se o limite de cpu e memoria do cluster for atingido, o kubernetes **não** cria
 Se um nó cair, os pods que pertenciam a esse nó vão ser redistribuídos para outros.
 
 O k8s ira verificar a saúde dos pods pra se der ruim, subir outro saudável e matar o que não está saudável.
+
+## Comandos importantes
+
+Mapeando para, quando eu acessar o localhost 8080 da minha máquina, ir para a porta 8080 de um pod
+
+```bash
+kubectl port-forward pod/goserver 8080:8080
+```
