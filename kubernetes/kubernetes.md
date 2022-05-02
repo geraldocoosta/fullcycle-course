@@ -64,4 +64,7 @@ kubectl delete pod goserver
 
 # Buscando pods no namespace default
 kubectl get pod
+
+# Buscando replicasets namespace default
+kubectl get replicaSet
 ```
