@@ -4,7 +4,7 @@ import "net/http"
 
 func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Hello, Kubernetes!"))
+		w.Write([]byte("Hello, Kubernetes!!"))
 	})
 	http.ListenAndServe(":8080", nil)
 }

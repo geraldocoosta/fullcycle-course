@@ -67,4 +67,13 @@ kubectl get pod
 
 # Buscando replicasets namespace default
 kubectl get replicaSet
+
+# Mostra informações sobre o pod
+kubectl describe pod namePod
 ```
+
+O replica set é um conjunto de pods, que são replicas de um mesmo pod.
+
+Qual o problema dele? Basicamente, ele verifica a quantidade de pods que estão no ar, e só, se eu mudar o manifesto e aplicar ele, ele não irá criar outros pods.
+
+Para ele subir outra versão, é necessário que ele seja deletado e criado novamente.
