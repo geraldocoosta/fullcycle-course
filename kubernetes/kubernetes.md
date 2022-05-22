@@ -70,6 +70,15 @@ kubectl get replicaSet
 
 # Mostra informações sobre o pod
 kubectl describe pod namePod
+
+# Trás o historico de implantações de um objecto, nesse caso, um deployment com nome nomedeployment
+kubectl rollout history deployment nomedeployment
+
+# Volta pra ultima versão que estava rodando
+kubectl rollout undu deployment nomedeployment
+
+# voltando para uma versão especifica
+kubectl rollout undo deployment nomedeployment --to-revision=2
 ```
 
 O replica set é um conjunto de pods, que são replicas de um mesmo pod.
