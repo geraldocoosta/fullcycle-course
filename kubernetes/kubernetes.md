@@ -86,3 +86,12 @@ O replica set é um conjunto de pods, que são replicas de um mesmo pod.
 Qual o problema dele? Basicamente, ele verifica a quantidade de pods que estão no ar, e só, se eu mudar o manifesto e aplicar ele, ele não irá criar outros pods.
 
 Para ele subir outra versão, é necessário que ele seja deletado e criado novamente.
+
+## Tipos de Service
+
+- ClusterIP (padrão) - Expõe o serviço sob um endereço IP interno no cluster. Este tipo faz do serviço somente alcançável de dentro do cluster.
+- NodePort - Expõe o serviço sob a mesma porta em cada nó selecionado no cluster usando NAT. Faz o serviço acessível externamente ao cluster usando `<NodeIP>:<NodePort>`. Superconjunto de ClusterIP.
+- LoadBalancer - Cria um balanceador de carga externo no provedor de nuvem atual (se suportado) e assinala um endereço IP fixo e externo para o serviço. Superconjunto de NodePort.
+- ExternalName - Expõe o serviço usando um nome arbitrário (especificado através de externalName na especificação spec) retornando um registro de CNAME com o nome. Nenhum proxy é utilizado. Este tipo requer v1.7 ou mais recente de kube-dns
+
+[Documentação](https://kubernetes.io/pt-br/docs/home/)
