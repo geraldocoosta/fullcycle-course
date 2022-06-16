@@ -98,3 +98,30 @@ Para ele subir outra versão, é necessário que ele seja deletado e criado nova
 - ExternalName - Expõe o serviço usando um nome arbitrário (especificado através de externalName na especificação spec) retornando um registro de CNAME com o nome. Nenhum proxy é utilizado. Este tipo requer v1.7 ou mais recente de kube-dns
 
 [Documentação](https://kubernetes.io/pt-br/docs/home/)
+
+### NodePort
+
+Basicamente, abre uma porta em todos os nós (a porta vai ter valor maior que 30000 e menor que 32727) apontando para um serviço para ser acessado externamente.
+Para demonstração ou coisas temporárias.
+Na pratica, muito raro de ser usado.
+
+Para ser usado, primeiro, o arquivo Service.yml fica desse jeito
+
+```yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goserver-service
+spec:
+  selector:
+    app: goserver
+  type: NodePort
+  ports:
+  - name: goserver-service
+    port: 80 # porta que será acessada no service
+    targetPort: 8080 # porta dos pods, o default é a 80
+    protocol: TCP # protocolo default
+    nodePort: 30001 # node port, bem difícil de ser usado
+```
+
+Depois é só acessar pelo endereço do nó e a porta do node port

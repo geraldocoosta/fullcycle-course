@@ -5,9 +5,10 @@ metadata:
 spec:
   selector:
     app: goserver
-  type: ClusterIP
+  type: NodePort
   ports:
   - name: goserver-service
     port: 80 # porta que será acessada no service
     targetPort: 8080 # porta dos pods, o default é a 80
     protocol: TCP # protocolo default
+    nodePort: 30001 # node port, bem difícil de ser usado
