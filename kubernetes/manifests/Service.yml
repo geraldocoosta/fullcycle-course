@@ -9,5 +9,5 @@ spec:
   ports:
   - name: goserver-service
     port: 80 # porta que será acessada no service
-    targetPort: 8080 # porta do container, o default é a 80
+    targetPort: 8080 # porta dos pods, o default é a 80
     protocol: TCP # protocolo default
