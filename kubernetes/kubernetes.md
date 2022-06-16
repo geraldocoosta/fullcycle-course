@@ -125,3 +125,29 @@ spec:
 ```
 
 Depois é só acessar pelo endereço do nó e a porta do node port
+
+### LoadBalancer
+
+```yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goserver-service
+spec:
+  selector:
+    app: goserver
+  type: LoadBalancer
+  ports:
+  - name: goserver-service
+    port: 80 # porta que será acessada no service
+    targetPort: 8080 # porta dos pods, o default é a 80
+    protocol: TCP # protocolo default
+```
+
+O serviço com LoadBalancer ficar dessa forma. Ele gera um ip externo para acessar uma aplicação "de fora". Usado quando o cluster é gerenciado, conectado a um provedor de nuvem.
+
+Custa dinheiro, usar com parcimônia.
+
+Localmente, não funciona. xD
+
+O LoadBalancer também gera um NodePort.
