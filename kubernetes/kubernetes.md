@@ -79,6 +79,9 @@ kubectl rollout undu deployment nomedeployment
 
 # voltando para uma versão especifica
 kubectl rollout undo deployment nomedeployment --to-revision=2
+
+# Faz um proxy da minha maquina para a api do kubernetes
+kubectl proxy --port=8080
 ```
 
 O replica set é um conjunto de pods, que são replicas de um mesmo pod.
