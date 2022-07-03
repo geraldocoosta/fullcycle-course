@@ -82,6 +82,12 @@ kubectl rollout undo deployment nomedeployment --to-revision=2
 
 # Faz um proxy da minha maquina para a api do kubernetes
 kubectl proxy --port=8080
+
+# Entra dentro do pod que nem no quando usamos docker
+kubectl exec -it nomepod -- bash
+
+# Pega os logs de um pod
+kubectl logs nomepod
 ```
 
 O replica set é um conjunto de pods, que são replicas de um mesmo pod.
