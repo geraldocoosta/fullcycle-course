@@ -23,14 +23,6 @@ spec:
             cpu: "500m"
         ports:
           - containerPort: 8080
-        env:
-          - name: "NAME"
-            valueFrom:
-              configMapKeyRef:
-                name: goserver-configmap
-                key: NAME
-          - name: "AGE"
-            valueFrom:
-              configMapKeyRef:
-                name: goserver-configmap
-                key: AGE
+        envFrom:
+          - configMapRef:
+              name: goserver-configmap
