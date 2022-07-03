@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: goserver
-        image: geraldocoosta/go-http:v5
+        image: geraldocoosta/go-http:v6
         resources:
           limits:
             memory: "128Mi"
@@ -26,3 +26,13 @@ spec:
         envFrom:
           - configMapRef:
               name: goserver-configmap
+        volumeMounts:
+          - mountPath: "/go-server/myfamily"
+            name: config
+      volumes:
+        - name: config
+          configMap:
+            name: goserver-configmap-family
+            items:
+              - key: members
+                path: "family.txt"
