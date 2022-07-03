@@ -16,10 +16,15 @@ spec:
     spec:
       containers:
       - name: goserver
-        image: geraldocoosta/go-http:v2
+        image: geraldocoosta/go-http:latest
         resources:
           limits:
             memory: "128Mi"
             cpu: "500m"
         ports:
           - containerPort: 8080
+        env:
+          - name: "NAME"
+            value: "Geraldo"
+          - name: "AGE"
+            value: "25"

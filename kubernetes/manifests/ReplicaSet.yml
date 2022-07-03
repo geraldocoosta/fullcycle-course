@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: goserver
-        image: geraldocoosta/go-http:v2
+        image: geraldocoosta/go-http:latest
         resources:
           limits:
             memory: "128Mi"
