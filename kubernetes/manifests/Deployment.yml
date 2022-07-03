@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: goserver
-        image: geraldocoosta/go-http:latest
+        image: geraldocoosta/go-http:v5
         resources:
           limits:
             memory: "128Mi"
@@ -25,6 +25,12 @@ spec:
           - containerPort: 8080
         env:
           - name: "NAME"
-            value: "Geraldo"
+            valueFrom:
+              configMapKeyRef:
+                name: goserver-configmap
+                key: NAME
           - name: "AGE"
-            value: "25"
+            valueFrom:
+              configMapKeyRef:
+                name: goserver-configmap
+                key: AGE

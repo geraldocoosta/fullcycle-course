@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: goserver-configmap
+data:
+  NAME: Geraldo
+  AGE: "25"
