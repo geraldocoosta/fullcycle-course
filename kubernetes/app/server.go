@@ -26,5 +26,13 @@ func main() {
 		fmt.Fprintf(w, "My family: %s", string(data))
 	})
 
+	http.HandleFunc("/Secret", func(w http.ResponseWriter, r *http.Request) {
+
+		user := os.Getenv("USER")
+		pass := os.Getenv("PASS")
+
+		fmt.Fprintf(w, "User: %s, Pass %s", user, pass)
+	})
+
 	http.ListenAndServe(":8080", nil)
 }
